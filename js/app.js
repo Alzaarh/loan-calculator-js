@@ -7,6 +7,8 @@ const monthlyEl = document.getElementById('monthly-payment');
 const totalPayEl = document.getElementById('total-payment');
 const totalIntEl = document.getElementById('total-interest');
 const submitBtnEl = document.querySelector('button[type=submit]');
+const loaderEl = document.querySelector('.loader');
+const resultEl = document.querySelector('.result');
 
 function showError() {
   const cardEl = document.querySelector('.card');
@@ -29,12 +31,17 @@ function calculateAndUpdate() {
   if (base < 100 || interest < 0.01 || interest > 99 || numberOfMonths < 1) {
     showError();
   } else {
-    const totalPay = base + (numberOfMonths * interest * base);
-    const totalInt = totalPay - base;
-    const monthly = totalPay / numberOfMonths;
-    monthlyEl.value = monthly.toFixed(2);
-    totalPayEl.value = totalPay.toFixed(2);
-    totalIntEl.value = totalInt.toFixed(2);  
+    loaderEl.style.display = 'block';
+    setTimeout(() => {
+      loaderEl.style.display = 'none';
+      resultEl.style.display = 'block';
+      const totalPay = base + (numberOfMonths * interest * base);
+      const totalInt = totalPay - base;
+      const monthly = totalPay / numberOfMonths;
+      monthlyEl.value = monthly.toFixed(2);
+      totalPayEl.value = totalPay.toFixed(2);
+      totalIntEl.value = totalInt.toFixed(2);    
+    }, 2500);
   }
 }
 
