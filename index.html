@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/app.js" defer></script>
+  <title>Loan Calculator with Vanilla Javascript</title>
+</head>
+<body>
+  <div class="card">
+    <h1 class="card-title">Loan Calculator</h1>
+    <form id="form">
+      <div class="number-input">
+        <button class="number-minus">-</button>
+        <input type="number" placeholder="Enter amount" id="amount">
+        <button class="number-plus">+</button>
+      </div>
+      <div class="number-input">
+        <button class="number-minus">-</button>
+        <input type="number" placeholder="Enter interest" id="interest">
+        <button class="number-plus">+</button>
+      </div>
+      <div class="number-input">
+        <button class="number-minus">-</button>
+        <input type="number" placeholder="Month to repay" id="duration">
+        <button class="number-plus">+</button>
+      </div>
+      <button type="submit" class="btn">Calculate</button>
+    </form>
+    <div class="result">
+      <div class="text-input">
+        <label>Monthly Payment</label>
+        <input type="text" disabled id="monthly-payment">
+      </div>
+      <div class="text-input">
+        <label>Total Payment</label>
+        <input type="text" disabled id="total-payment">
+      </div>
+      <div class="text-input">
+        <label>Total Interest</label>
+        <input type="text" disabled id="total-interest">
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
